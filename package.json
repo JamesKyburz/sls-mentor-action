@@ -1,0 +1,11 @@
+{
+  "private": "true",
+  "devDependencies": {
+    "esbuild": "0.19.5",
+    "sls-mentor": "2.3.2"
+  },
+  "scripts": {
+    "pre:build": "rm -rf dist",
+    "build": "esbuild --bundle --format=cjs index.js --minify --platform=node --outdir=dist"
+  }
+}
