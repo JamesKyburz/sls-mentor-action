@@ -1,0 +1,24 @@
+name: 'sls-mentor'
+description: 'Open-source serverless infrastructure audit'
+
+inputs:
+  aws-region:
+    description: 'aws region'
+    required: true
+  tags:
+    description: 'Filter checked account resources by tags'
+  level:
+    description: 'Level on which to run checks (1-5)'
+    required: true
+  cloudformation-stacks:
+    description: 'Filter checked account resources by CloudFormation stack names'
+  no-fail:
+    description: 'Exit with success status, even if some checks failed (default: false)'
+    default: 'false'
+  report:
+    description: 'generate an html report (default: false)'
+    default: 'false'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
